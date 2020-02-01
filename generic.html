@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Broadcast by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Tubo Videos</title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">Tubo <span>VIDEOS</span></a></h1>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+				</ul>
+			</nav>
+
+<!-- Main -->
+<div id="main">
+
+  <!-- One -->
+  <section class="wrapper style1">
+    <div class="inner">
+      <div class="video">
+        <div class="video-wrapper">
+          <div id="player"></div>
+          <script>
+          // Este código carrega o código da API do IFrame Player de forma assíncrona.
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Esta função cria um <iframe> (e player do YouTube) após os downloads do código da API.
+            var player;
+            function onYouTubeIframeAPIReady() {
+              player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                // 'videoId' quando descomentada monta o player carregando um video
+                videoId: '_X9ZvPnbBfE',
+                playerVars: {
+                  'autoplay': 1,
+                  'controls': 0,
+                  // variáveis de playlist
+                  // 'listType' e 'list' quando descomentada monta o player carregando uma playlist
+                  // as variáveis de 'playlist' se descomentadas ignoram a variavel acima 'videoId'
+                  // listType: 'playlist',
+                  // list: 'id_playlist_aqui'
+                },
+                events: {
+                  'onReady': onPlayerReady,
+                  'onStateChange': onPlayerReady
+                }
+              });
+            }
+
+            // A API chamará essa função quando o player de vídeo estiver pronto.
+            function onPlayerReady(event) {
+              event.target.setVolume(50);
+              event.target.playVideo();
+            }
+          </script>
+        </div>
+        <p class="caption">Algumas mídias não estão disponíveis fora
+          do Youtube.
+        </p>
+      </div>
+  </section>
+  <!--End player-->
+
+  <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <div class="flex flex-3">
+          <!-- <div class="col">
+            <h3>Vestibullum</h3>
+            <ul class="alt">
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+              <li><a href="#">Vis id faucibus montes tempor</a></li>
+              <li><a href="#">Massa amet lobortis vel.</a></li>
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Lobortis</h3>
+            <ul class="alt">
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+              <li><a href="#">Vis id faucibus montes tempor</a></li>
+              <li><a href="#">Massa amet lobortis vel.</a></li>
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Accumsan</h3>
+            <ul class="alt">
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+              <li><a href="#">Vis id faucibus montes tempor</a></li>
+              <li><a href="#">Massa amet lobortis vel.</a></li>
+              <li><a href="#">Nascetur nunc varius commodo.</a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+      <div class="copyright">
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+        </ul>
+        &copy; 2019 <a href="#">Tubo Videos</a>
+      </div>
+    </footer>
+
+  <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+  </html>
